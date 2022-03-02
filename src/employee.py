@@ -71,3 +71,10 @@ class FactoryWorker(HourlyEmployee):
             hours=hours
         ))
 
+
+class TemporarySecretary(Secretary, HourlyEmployee):
+    def __init__(self, id: int, name: str, hourly_wage: float, hours_worked: int):
+        HourlyEmployee.__init__(self, id, name, hourly_wage, hours_worked)
+
+    def calculate_payroll(self):
+        return HourlyEmployee.calculate_payroll(self)
