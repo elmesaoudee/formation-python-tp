@@ -19,5 +19,6 @@ emps = [
 ]
 
 
-productivity.ProductivitySystem.track_productivity(emps, 40)
+print(productivity.ProductivitySystem.track_productivity(emps, 40))
 hr.PayrollSystem.calculate_payroll(emps)
+# print(''.join([f'{employee.name} : {employee.work(40)}\n' for employee in emps]))
