@@ -1,23 +1,23 @@
-import employee
-import hr
-import productivity
+from src import hr
+from src import productivity
+from src import employees
 
 
-manager = employee.Manager(1, "Elghazi Ilyass", 4000)
-secretary = employee.Secretary(1, "Elghazi Ilyass", 4000)
-sales_person = employee.SalesPerson(2, "Zakaria", 400, 50)
-factory_worker = employee.FactoryWorker(3, "Salma", 4000, 1000)
-temporary_secretary = employee.TemporarySecretary(4, "Jane", 600, 40)
+manager = employees.Manager(1, 'Zakaria', 700)
+secretary = employees.Secretary(1, 'Zakaria', 700)
+sales_person = employees.SalesPerson(3, 'Meryem', 500, 300)
+factory_worker = employees.FactoryWorker(2, 'Amine', 28, 20)
+temporary_secretary = employees.TemporarySecretary(5, 'Amina', 40, 15)
 
-employees = [
+
+emps = [
     manager,
     secretary,
     sales_person,
     factory_worker,
     temporary_secretary
 ]
-productivity_system = productivity.ProductivitySystem()
-payroll_system = hr.PayrollSystem()
 
-productivity_system.track_productivity(employees,40)
-payroll_system.calculate_payroll(employees)
+
+productivity.ProductivitySystem.track_productivity(emps, 40)
+hr.PayrollSystem.calculate_payroll(emps)
